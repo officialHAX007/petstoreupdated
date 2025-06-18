@@ -1,0 +1,241 @@
+body {
+    font-family: 'Open Sans', sans-serif; /* A clean and readable sans-serif font */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f7f6; /* Very light grey background */
+    color: #333;
+    line-height: 1.7;
+}
+
+/* Import Open Sans font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Import a friendly heading font (e.g., Nunito) */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
+
+h1, h2 {
+    font-family: 'Nunito', sans-serif; /* Friendly and slightly rounded heading font */
+    color: #2c3e50; /* Darker heading color */
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.4em;
+    font-weight: 600;
+}
+
+header {
+    /* --- Added for jumbotron.jpg background image --- */
+    background-image: url('jumbotron.jpg'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire header area */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    min-height: 250px; /* Adjust this value to control the height of your header */
+    display: flex; /* Use flexbox to center content vertically/horizontally */
+    flex-direction: column; /* Stack header content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for readability over image */
+    position: relative; /* Needed for the ::before pseudo-element */
+    overflow: hidden; /* Ensures the pseudo-element doesn't spill out */
+
+    background-color: #8ac4ff; /* A softer, more inviting blue */
+    padding: 40px 30px;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+/* Optional: Add an overlay for better text readability over the background image */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    z-index: 0; /* Place behind header content */
+}
+
+header h1 {
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Ensure text is above background and overlay */
+}
+
+nav {
+    margin-top: 20px;
+    z-index: 1; /* Ensure nav is above background and overlay */
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s ease-in-out; /* Smooth transition for color */
+}
+
+nav a:hover {
+    color: #fdd835; /* A cheerful yellow for hover */
+}
+
+main {
+    padding: 30px;
+}
+
+.pet-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid layout */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Keyframe for fade-in and slight slide-up */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pet {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Animation on load */
+    opacity: 0; /* Start invisible */
+    animation: fadeInSlideUp 0.6s ease-out forwards; /* Apply animation */
+    /* Staggered animation for each pet */
+    /* This will be applied dynamically if you have more pets rendered by JS,
+       or you can use nth-child in CSS for pre-defined number of elements */
+}
+
+/* Staggered animation for pets (up to a certain number, adjust as needed) */
+.pet:nth-child(1) { animation-delay: 0.1s; }
+.pet:nth-child(2) { animation-delay: 0.2s; }
+.pet:nth-child(3) { animation-delay: 0.3s; }
+.pet:nth-child(4) { animation-delay: 0.4s; }
+.pet:nth-child(5) { animation-delay: 0.5s; }
+.pet:nth-child(6) { animation-delay: 0.6s; }
+/* Add more .pet:nth-child rules if you expect many more featured pets on the home page,
+   or if this animation is on the pets.html page where more pets load. */
+
+
+.pet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.pet img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.pet h3 {
+    font-size: 1.6em;
+    color: #3498db; /* A friendly blue for pet names */
+    margin-bottom: 10px;
+}
+
+.pet p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #3498db; /* Consistent button color */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Button active (pressed) state animation */
+button:active {
+    transform: translateY(2px) scale(1.03); /* Slight push down and minor scale */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow for pressed look */
+    background-color: #2471a3; /* Even darker blue when pressed */
+    transition: transform 0.1s ease-out; /* Quicker transition for active state */
+}
+
+footer {
+    background-color: #34495e;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+/* Style for the pet type filter checkboxes */
+main > div:first-of-type { /* Targeting the filter container */
+    background-color: #e0f7fa; /* Light cyan background for the filter */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+main > div:first-of-type > div:first-child { /* Targeting the "Type:" label */
+    font-weight: 600;
+    color: #37474f;
+    margin-right: 15px;
+}
+
+main > div:first-of-type > div:last-child { /* Targeting the checkboxes container */
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Center the checkboxes */
+    align-items: center;
+}
+
+main > div:first-of-type input[type="checkbox"] { /* Corrected selector */
+    margin-right: 5px;
+}
+
+/* Basic styling for the checkbox labels */
+main > div:first-of-type label {
+    font-size: 1em;
+    color: #455a64;
+    cursor: pointer;
+}

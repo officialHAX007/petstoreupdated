@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Store - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Pet Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pets.html">Pets</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured">
+            <h2>Featured Pets</h2>
+            <div class="pet-list">
+                <div class="pet">
+                    <img src="dog01.jpg" alt="Charlie the Golden Retriever" onerror="this.onerror=null;this.src='https://placehold.co/180x180/cccccc/333333?text=Dog+Image';">
+                    <h3>Charlie</h3>
+                    <p>Type: Golden Retriever</p>
+                    <p>Age: 3 years</p>
+                    <button onclick="adoptPet()">Adopt Now</button>
+                </div>
+                <div class="pet">
+                    <img src="cat.webp" alt="Milo the British Shorthair" onerror="this.onerror=null;this.src='https://placehold.co/180x180/cccccc/333333?text=Cat+Image';">
+                    <h3>Milo</h3>
+                    <p>Type: British Shorthair</p>
+                    <p>Age: 2 years</p>
+                    <button onclick="adoptPet()">Adopt Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="contact-info">
+            <p>
+                88 Moo 8 Bang Na-Trad Km. 26,<br>
+                Bang Sao Thong, Samut Prakan Thailand 10570
+            </p>
+            <p class="contact-info-phone">Phone Number: +66 2723 2222</p>
+            <p class="contact-info-fax">Fax Number: +66 2707 0395</p>
+        </div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.535191390633!2d100.72982517507342!3d13.723095586690858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29e798263287b%3A0x4186cefc0c143d63!2sAssumption%20University!5e0!3m2!1sen!2sth!4v1718084574666!5m2!1sen!2sth"
+            width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

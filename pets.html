@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Pets</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>All Pets</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Our Pet Collection</h2>
+        <div style="display: flex; gap: 24px; justify-content: center; margin-bottom: 20px;">
+            Type:
+            <div style="display: flex; gap: 15px;">
+                <div><input type="checkbox" id="type-dogs" name="pet-type" value="Dog" checked/> Dogs</div>
+                <div><input type="checkbox" id="type-cats" name="pet-type" value="Cat" checked/> Cats</div>
+                <div><input type="checkbox" id="type-capybaras" name="pet-type" value="Capybara" checked/> Capybaras</div>
+                <div><input type="checkbox" id="type-birds" name="pet-type" value="Bird" checked/> Birds</div>
+                <div><input type="checkbox" id="type-hamsters" name="pet-type" value="Hamster" checked/> Hamsters</div>
+                <div><input type="checkbox" id="type-fish" name="pet-type" value="Fish" checked/> Fish</div>
+            </div>
+        </div>
+        <div class="pet-list" id="pet-list">
+            </div>
+    </main>
+    <footer>
+        <p>Contact us at: <strong>info@petstore.com</strong></p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="loadpet.js"></script>
+</body>
+</html>
